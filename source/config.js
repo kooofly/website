@@ -5,5 +5,6 @@ export default {
     words_index_url: uri + 'issues?filter=created&page=1&per_page=5&labels=words',
     words_list_url: uri + 'issues?filter=created&page=1&per_page=5&labels=words',
     nav_labels_url: uri + 'labels',
-    access_token: '228d734c0f43bf3a1b' + '55e935b71c4d84f1193ee3'
+    access_token: '738bf58152d8aa13e66a673e906f97eea3c2002c'
 }
+
