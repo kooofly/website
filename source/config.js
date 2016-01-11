@@ -4,5 +4,6 @@ export default {
     article_url: uri + 'issues/',
     words_index_url: uri + 'issues?filter=created&page=1&per_page=5&labels=words',
     words_list_url: uri + 'issues?filter=created&page=1&per_page=5&labels=words',
-    nav_labels_url: uri + 'labels'
+    nav_labels_url: uri + 'labels',
+    access_token: 'e02e6fa589c9abaad8a5fd455e7ca6d4d9ec89a8'
 }

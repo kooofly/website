@@ -1,10 +1,11 @@
 <style>
-    .words{ padding: 20px; background: #f3f3f3; margin-bottom: 40px;   }
-    .words .title{font-size: 1.2em;}
-    .words .title .icon{font-size: 1.2em;margin-right: 10px;}
+    .words{ padding: 20px; background: #f3f3f3; margin-bottom: 40px; }
+    .words .title{ font-size: 1.2em; }
+    .words .title .icon{ font-size: 1.2em; margin-right: 10px; }
     .words ul{ padding:0; list-style: none; font-family: Arial, sans-serif; line-height: 1.5 }
     .words ul li{ padding-bottom: 40px; }
     .words .content{ word-break: break-all; word-wrap: break-word; text-shadow: 1px 1px 1px #fff; }
+    .words ._{ font-size: 12px; color: #aaa; }
 </style>
 <template>
     <div class="words">
@@ -12,13 +13,14 @@
         <ul>
             <li v-for="item in words">
                 <div class="content">{{{item.body | marked}}}</div>
-                <div class="text-right"><em>- {{item.title}}</em></div>
+                <div class="text-right"><span class="_">- {{item.title}}</span></div>
             </li>
         </ul>
     </div>
 </template>
 <script>
     import marked from '../common/marked.min'
+    import config from '../config'
     export default {
         props: [{name: 'url', default: ''}],
         data() {
@@ -29,7 +31,8 @@
         ready() {
             var self = this
             this.$http.get({
-                url: this.url
+                url: this.url,
+                access_token: config.access_token
             }).then(function(res) {
                 self.$set('words', res.data)
             }, function() {

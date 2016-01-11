@@ -68,6 +68,7 @@
 <script>
     import Placeholder from './placeholder.vue'
     import marked from '../common/marked.min'
+    import config from '../config'
     export default {
         props: ['url'],
         data() {
@@ -82,6 +83,7 @@
                     loading = self.$root.$refs.loading
                 this.$http.get({
                     url: val,
+                    access_token: config.access_token
                 }).then(function(res) {
                     loading.done()
                     self.isLoaded = true

@@ -21,7 +21,8 @@
             return {
                 request: {
                     page: 1,
-                    per_page: 10
+                    per_page: 10,
+                    access_token: config.access_token
                 },
                 article_list_url: config.article_list_url,
                 words_url: config.words_index_url

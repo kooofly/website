@@ -19,7 +19,8 @@
             return {
                 request: {
                     page: 1,
-                    per_page: 5
+                    per_page: 5,
+                    access_token: config.access_token
                 },
                 words_list_url: config.words_list_url
             }
