@@ -32,13 +32,12 @@
             var self = this
             this.$http.get({
                 url: this.url,
-                access_token: config.access_token
+                data: config.client
             }).then(function(res) {
                 self.$set('words', res.data)
             }, function() {
 
             })
-            console.log()
         },
         filters: {
             marked: function(text) {

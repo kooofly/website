@@ -1,5 +1,21 @@
 "use strict";
 export default {
+    mix: function(o) {
+        var i = 1,
+            l = arguments.length
+        for ( ; i < l; i++ ) {
+            var arg = arguments[i]
+            for ( var k in arg ) {
+                if( arg.hasOwnProperty( k ) ){
+                    // 在 iPhone 1 代等设备的 Safari 中，prototype 也会被枚举出来，需排除
+                    if( k !== 'prototype' ){
+                        o[k] = arg[k]
+                    }
+                }
+            }
+        }
+        return o;
+    },
     link: function(data, prefix) {
         var result = [];
         var pathname = location.pathname,

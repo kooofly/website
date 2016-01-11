@@ -62,7 +62,7 @@
             var self = this
             this.$http.get({
                 url: config.nav_labels_url,
-                access_token: config.access_token
+                data: config.client
             }).then(function(res) {
                 var data = res.data
                 for (var i = 0, j = data.length; i < j; i++) {

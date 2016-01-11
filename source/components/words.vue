@@ -9,7 +9,7 @@
     </div>
 </template>
 <script>
-
+    import common from '../common/common'
     import config from '../config'
     import VNav from './nav.vue'
     import VWords from './words_list.vue'
@@ -17,11 +17,10 @@
     export default {
         data() {
             return {
-                request: {
+                request: common.mix({
                     page: 1,
-                    per_page: 5,
-                    access_token: config.access_token
-                },
+                    per_page: 5
+                }, config.client),
                 words_list_url: config.words_list_url
             }
         },

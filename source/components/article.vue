@@ -66,6 +66,7 @@
     <placeholder v-else :is-empty="isEmpty"></placeholder>
 </template>
 <script>
+    import common from '../common/common'
     import Placeholder from './placeholder.vue'
     import marked from '../common/marked.min'
     import config from '../config'
@@ -81,10 +82,9 @@
             url: function(val, oldVal) {
                 var self = this,
                     loading = self.$root.$refs.loading
-                this.$http.get({
-                    url: val,
-                    access_token: config.access_token
-                }).then(function(res) {
+                this.$http.get(common.mix({
+                    url: val
+                }, config.client)).then(function(res) {
                     loading.done()
                     self.isLoaded = true
                     self.$set('article', res.data)

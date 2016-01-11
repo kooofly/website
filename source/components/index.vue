@@ -11,6 +11,7 @@
     </div>
 </template>
 <script>
+    import common from '../common/common'
     import config from '../config'
     import VNav from './nav.vue'
     import VArticleList from './article_list.vue'
@@ -19,11 +20,10 @@
     export default {
         data() {
             return {
-                request: {
+                request: common.mix({
                     page: 1,
-                    per_page: 10,
-                    access_token: config.access_token
-                },
+                    per_page: 10
+                }, config.client),
                 article_list_url: config.article_list_url,
                 words_url: config.words_index_url
             }
