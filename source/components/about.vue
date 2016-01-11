@@ -4,6 +4,7 @@
     .about .links .icon{ display: inline-block; font-size: 24px; line-height: 1; width: 24px; height: 24px;color: #7E7F84; margin-right: 6px;}
     .about .links a:hover .icon-github{color: #333;}
     .about .links a:hover .icon-sina{ color: #f74864; }
+    .about .links a:hover .icon-tengxunweibo{ color: #45ABF3; }
     .about .links a:hover .icon-phone{ color: #1ec354; }
     .about .introduction p{ margin-bottom: 0; }
     .about .introduction .tags{border-radius: 15px;
@@ -27,7 +28,7 @@
                 <div class="links">
                     <a href="https://github.com/kooofly" target="_blank"><i class="icon icon-github"></i></a>
                     <a href="http://weibo.com/kooofly?profile_ftype=1&is_all=1#_0" target="_blank"><i class="icon icon-sina"></i></a>
-                    <!--<a href="#" target="_blank"><i class="icon icon-phone"></i></a>-->
+                    <a href="http://t.qq.com/kooofly" target="_blank"><i class="icon icon-tengxunweibo"></i></a>
                 </div>
             </div>
         </div>
