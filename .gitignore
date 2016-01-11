@@ -1,0 +1,5 @@
+.idea
+node_modules/
+design/
+dev.html
+server-mock/
