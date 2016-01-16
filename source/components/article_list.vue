@@ -4,7 +4,7 @@
     .article-list li{ margin: 60px 0; }
     .article-list .footer{ font-size: 12px; color: #aaa; line-height: 20px; }
     .article-list .footer .icon-comment{ vertical-align: -1px; }
-    .article-list .footer .tags{ border-radius: 15px; padding-top: 0; padding-bottom: 0; margin-right: 6px; font-family: Arial, sans-serif; font-size: 12px; vertical-align: 2px; }
+    .article-list .footer .tags{ border-radius: 15px; padding-top: 0; padding-bottom: 0; margin-right: 6px; font-family: Arial, sans-serif; font-size: 12px; vertical-align: 2px; color: #fff; }
     .article-list .footer .label{ margin-right: 6px; }
     .article-list-handle{ margin-bottom: 60px; text-align: right; }
 </style>
