@@ -3,7 +3,7 @@
     article{ font-size: 1.15em; text-align: left; }
     article .info{ font-size:1em; margin: 5em 0 1.4em; }
 
-    article .info a{ color: #455c88; display: inline-block; margin-left:0.2em; padding:0 0.2em; border-bottom:1px solid rgba(255, 51, 54, 0.79); }
+    article .info a{ color: #455c88; display: inline-block; margin-left:0.2em; border-bottom:1px solid rgba(255, 51, 54, 0.79); }
     article img{ max-width: 100%; }
     article h1{ font-size: 2.4em; }
     article h2{ font-size: 1.8em; }
@@ -57,8 +57,8 @@
                 {{article.updated_at | time}}
             </span>
             <span class="pull-right">
-                <a href="javascript:;">Likes {{article.likes}}</a>
-                <a href="#comments">Comments {{article.comments}}</a>
+                <!--<a href="#comments">Comments {{article.comments}}</a>-->
+                <a class="ds-thread-count" data-thread-key="{{article.number}}" data-count-type="comments"></a>
             </span>
         </div>
         <h1>{{article.title}}</h1>
@@ -93,7 +93,6 @@
                     self.isLoaded = true
                     self.$set('article', res.data)
                     self.duoshuo()
-                    self.getDuoshuoCount()
                 }, function() {
                     loading.done()
                     self.$set('isEmpty', true)
@@ -112,6 +111,9 @@
                     return time.replace(/[A-Z]/g, ' ')
                 }
                 return ''
+            },
+            comments: function(text) {
+                return text.replace('条评论', '')
             }
         },
         methods: {
@@ -123,19 +125,6 @@
                 ds.charset = 'UTF-8';
                 (document.getElementsByTagName('head')[0]
                 || document.getElementsByTagName('body')[0]).appendChild(ds);
-            },
-            getDuoshuoCount: function() {
-                var self = this,
-                    id = self.$get('article').number
-                this.$http.get({
-                    url: config.duoshuo_count_api,
-                    data: {
-                        threads: id
-                    }
-                }).then(function(res) {
-                    self.article.comments = res.response[id].comments
-                    self.article.likes = res.response[id].likes
-                })
             }
         },
         components: {
