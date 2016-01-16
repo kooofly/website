@@ -8,5 +8,6 @@ export default {
     client: {
         client_id: '5860bc4f31616f032986',
         client_secret: '37029f0f806951dc41523c78eeeff48b22f81404'
-    }
+    },
+    duoshuo_count_api: 'http://api.duoshuo.com/threads/counts.json?short_name=kooofly'
 }
