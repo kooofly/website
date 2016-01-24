@@ -52,9 +52,27 @@
         pre .atn, code .atn { color: #404 }
         pre .atv, code .atv { color: #060 }
     }
+
+    article blockquote{
+        border-left: 5px solid rgba(128,128,128,0.075);
+        margin: 0 0 1.1em;
+        border-left-width: 10px;
+        background-color: rgba(128,128,128,0.05);
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        padding: 15px 20px;
+    }
+    article .content blockquote p{
+        margin-top: 0;
+        margin-bottom: 1em;
+        font-size: 1em;
+        line-height: 1.45;
+    }
+    blockquote ul:last-child,
+    blockquote ol:last-child { margin-bottom: 0; }
 </style>
 <template>
-    <article id="article" v-if="isLoaded">
+    <article v-if="isLoaded">
         <div class="info clearfix">
             <span class="pull-left">
                 {{article.updated_at | time}}
