@@ -31,7 +31,10 @@
     pre .dec { color: #98fb98 } /* decimal         - lightgreen */
 
     /* Specify class=linenums on a pre to get line numbering */
-    ol.linenums { margin-top: 0; margin-bottom: 0; color: #AEAEAE } /* IE indents via margin-left */
+    ol.linenums { margin-top: 0; margin-bottom: 0; color: #AEAEAE; padding-left: 60px; } /* IE indents via margin-left */
+    ol.linenums li{ border-left: 1px solid #6B6767; padding-left: 20px; }
+    ol.linenums li:first-child{ padding-top: 10px; }
+    ol.linenums li:last-child{ padding-bottom: 10px; }
     li.L0,li.L1,li.L2,li.L3,li.L5,li.L6,li.L7,li.L8 { list-style-type: none }
     /* Alternate shading for lines */
     li.L1,li.L3,li.L5,li.L7,li.L9 { }
@@ -51,7 +54,7 @@
     }
 </style>
 <template>
-    <article v-if="isLoaded">
+    <article id="article" v-if="isLoaded">
         <div class="info clearfix">
             <span class="pull-left">
                 {{article.updated_at | time}}
@@ -74,6 +77,7 @@
     import Placeholder from './placeholder.vue'
     import marked from '../common/marked.min'
     import config from '../config'
+    import prettify from '../common/prettify/prettify'
     export default {
         props: ['url'],
         data() {
@@ -92,11 +96,21 @@
                     loading.done()
                     self.isLoaded = true
                     self.$set('article', res.data)
+
                     self.duoshuo()
                 }, function() {
                     loading.done()
                     self.$set('isEmpty', true)
                 })
+            },
+            article: function() {
+                if(!document.querySelectorAll) return
+                var nodes = document.querySelectorAll('article pre')
+                for (var i = 0, j = nodes.length; i < j; i++) {
+                    var node = nodes[i];
+                    node.className = 'prettyprint linenums'
+                }
+                prettyPrint()
             }
         },
         filters: {
