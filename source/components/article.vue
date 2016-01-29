@@ -108,9 +108,10 @@
             url: function(val, oldVal) {
                 var self = this,
                     loading = self.$root.$refs.loading
-                this.$http.get(common.mix({
-                    url: val
-                }, config.client)).then(function(res) {
+                this.$http.get({
+                    url: val,
+                    data: config.client
+                }).then(function(res) {
                     loading.done()
                     self.isLoaded = true
                     self.$set('article', res.data)
