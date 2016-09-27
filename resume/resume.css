@@ -1,0 +1,29 @@
+/*<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">*/
+/* latin */
+@font-face {
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Quicksand Regular'), local('Quicksand-Regular'), url(./fonts/Quicksand%20Regular.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+html, body{ margin: 0; padding: 0; font-family: "Microsoft YaHei", sans-serif; font-size: 14px; }
+.container{ width: 1160px; margin: auto; }
+.head{ height: 240px; background: #f6f6f6; }
+.head img{  vertical-align: middle; }
+.head .name{ padding-left: 40px; display: inline-block; vertical-align: middle; font-size: 70px; }
+.head .name .cn{ color: #3c699b; }
+.head .name .en{ color: #666; font-size: 60px; font-family: 'Quicksand', sans-serif; }
+.head .right {float: right;margin-top: 48px;text-align: right;padding: 0 40px;}
+.head .right .job{font-weight: 700;font-size: 24px;color: #3c699b;padding-bottom: 20px;border-bottom: 1px solid #d6d6d6;}
+.head .right .wrap{line-height: 2.5;margin-top: 28px; color: #666; }
+.head .right .wrap .icon{ font-size: 12px; margin-right: 6px; }
+.head .right .wrap .phone .icon{ vertical-align: 1px; }
+.bd .left{ width: 200px; color: #3c699b; font-size: 16px; }
+.bd .media{ margin-top: 30px; }
+.bd .media-body{ padding-bottom: 20px; border-bottom: 2px solid #ccc; position: relative; overflow: visible; }
+.bd .media-body:after{ display: block; content: ''; border-bottom: 2px solid #333; width: 100px; position: absolute; bottom: -2px; left: 0; }
+.bd .media-body .wrap{ margin-top: 30px; }
+.bd .media-body .wrap:first-child{ margin-top: 0; }
+.bd .media-body .wrap:first-child p{ margin-top: 0; }
