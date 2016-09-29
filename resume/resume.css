@@ -16,10 +16,13 @@ html, body{margin: 0;padding: 0;font-family: "Microsoft YaHei", sans-serif;font-
 .head .name .cn{ color: #3c699b; }
 .head .name .en{ color: #666; font-size: 60px; font-family: 'Quicksand', sans-serif; }
 .head .right {float: right;margin-top: 48px;text-align: right;padding: 0 40px;}
-.head .right .job{font-weight: 700;font-size: 24px;color: #3c699b;padding-bottom: 20px;border-bottom: 1px solid #d6d6d6;}
-.head .right .wrap{line-height: 2.5;margin-top: 28px; color: #666; }
-.head .right .wrap .icon{ font-size: 12px; margin-right: 6px; }
-.head .right .wrap .phone .icon{ vertical-align: 1px; }
+.head .right .job{font-weight: 700;font-size: 24px;color: #3c699b;padding-bottom: 10px;border-bottom: 1px solid #d6d6d6;}
+.head .right .wrap{line-height: 1.6;margin-top: 10px;color: #666;}
+.head .right .wrap .icon{font-size: 12px;margin-right: 6px;color: #adadad;}
+.head .right .wrap .email .icon{ vertical-align: 1px; }
+.head .right .wrap .phone .icon{font-size: 15px;vertical-align: -1px;}
+.head .right .wrap .github {margin-top: 6px;line-height: .9;}
+.head .right .wrap .github .icon{font-size: 18px;vertical-align: -2px;}
 .bd .left{ width: 200px; color: #3c699b; font-size: 16px; }
 .bd .media{ margin-top: 30px; }
 .bd .media-body{ padding-bottom: 20px; border-bottom: 2px solid #ccc; position: relative; overflow: visible; }
@@ -28,9 +31,14 @@ html, body{margin: 0;padding: 0;font-family: "Microsoft YaHei", sans-serif;font-
 .bd .media-body .wrap:first-child{ margin-top: 0; }
 .bd .media-body .wrap:first-child p{ margin-top: 0; }
 
-.container > .title {font-size: 20px;text-align: center;margin: 30px 0 20px;color: #666;}
-.container > .content { padding: 20px; background: #fff; }
-.container > .content > ul > li { margin-top: 24px; border-bottom: 1px solid #ccc; padding-bottom: 20px; }
+.container > .title {font-size: 20px;text-align: center;margin: 30px 0 0;color: #666;}
+.container > .content {padding: 20px 100px;background: #fff;}
+.container > .content .row{ margin-top: 20px; }
+.container > .content .row:first-child{ margin-top: 0; }
+.container > .content .projects{ padding-left: 18px; }
+.container > .content .media-left label{ width: 100px; display: inline-block; }
+.container > .content > ul > li {margin-top: 24px;border-bottom: 1px dotted #ddd;padding-bottom: 20px;}
+.container > .content > ul > li p:first-child{ margin-top: 0; }
 .container > .content > ul > li p:last-child{ margin-bottom: 0; }
 .container > .content li:first-child { margin-top: 0; }
 .time-progress {list-style: none;padding: 20px 0;}
